@@ -25,7 +25,6 @@ import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting'
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import AutoLink from '@ckeditor/ckeditor5-link/src/autolink';
 import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle';
-import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown';
 import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
 import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
@@ -38,11 +37,19 @@ import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
 import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily';
 import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
 import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
-import FullScreen from 'ckeditor5-fullscreen/FullScreen';
+import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace';
+import SelectAll from '@ckeditor/ckeditor5-select-all/src/selectall';
+import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
 export default class FinEditor extends ClassicEditorBase {}
 
 FinEditor.builtinPlugins = [
+    RemoveFormat,
+    TextTransformation,
+    MediaEmbed,
     PasteFromOffice,
     UploadAdapter,
     Essentials,
@@ -66,7 +73,6 @@ FinEditor.builtinPlugins = [
     Heading,
     Link,
     AutoLink,
-    Markdown,
     SpecialCharacters,
     SpecialCharactersEssentials,
     Alignment,
@@ -78,7 +84,9 @@ FinEditor.builtinPlugins = [
     FontFamily,
     FontColor,
     FontBackgroundColor,
-    FullScreen
+    FindAndReplace,
+    SelectAll,
+    HorizontalLine
 ]
 
 FinEditor.defaultConfig = {
@@ -86,6 +94,13 @@ FinEditor.defaultConfig = {
     uiColor: '#66AB16',
     toolbar: [
         'sourceEditing',
+        '|',
+        'undo',
+        'redo',
+        '|',
+        'findAndReplace',
+        '|',
+        'selectAll',
         '|',
         'bold',
         'italic',
@@ -95,17 +110,15 @@ FinEditor.defaultConfig = {
         'subscript',
         'superscript',
         '|',
-        'blockQuote',
+        'removeFormat',
         '|',
         'bulletedList',
         'numberedList',
         '|',
-
+        'horizontalLine',
+        'blockQuote',
         '|',
-        'heading',
         'link',
-        'undo',
-        'redo',
         '|',
         'alignment',
         '|',
@@ -113,16 +126,16 @@ FinEditor.defaultConfig = {
         '|',
         'uploadImage',
         'insertTable',
+        'mediaEmbed',
         'pageBreak',
         'specialCharacters',
         '|',
         'fontSize',
         'fontFamily',
+        'heading',
         '|',
         'fontColor',
         'fontBackgroundColor',
-        '|',
-        'fullScreen'
     ],
     image: {
         toolbar: [

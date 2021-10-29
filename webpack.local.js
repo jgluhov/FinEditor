@@ -16,7 +16,7 @@ module.exports = {
     plugins: [
         new CKEditorWebpackPlugin( {
             // See https://ckeditor.com/docs/ckeditor5/latest/features/ui-language.html
-            language: 'pl'
+            language: 'en'
         } ),
         new HtmlWebPackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html'),
