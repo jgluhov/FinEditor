@@ -1,8 +1,8 @@
 {
   "name": "fin-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "dist/fin-editor.bundle.js",
+  "main": "dist/fin-editor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
