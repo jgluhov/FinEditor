@@ -5,8 +5,12 @@ const path = require('path')
 module.exports = {
     entry: './src/fin-editor.js',
     output: {
-        filename: 'fin-editor.bundle.js',
+        filename: 'fin-editor.js',
         path: path.resolve(__dirname, 'dist'),
+        library: {
+            name: "finEditor",
+            type: "umd"
+        },
     },
     plugins: [
         new CKEditorWebpackPlugin( {

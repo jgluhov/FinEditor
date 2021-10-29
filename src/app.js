@@ -1,4 +1,4 @@
-import FinEditor from './fin-editor';
+import FinEditor from '../dist/fin-editor';
 
 FinEditor
     .create( document.querySelector( '#editor' ) )
